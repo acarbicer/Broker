@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayMyInvestments" >
+
+    <ListView
+        android:id="@+id/listView_MyInvest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/myinterested_listbar"
+        android:layout_marginTop="0dp"
+        android:layout_alignParentLeft="true"
+         >
+    </ListView>
+
+    <ImageView
+        android:id="@+id/myinterested_ustbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ustbar_display_my_interest" />
+    <ImageView
+        android:id="@+id/myinterested_listbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_int_ustbar" />
+
+</RelativeLayout>

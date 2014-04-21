@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/name_stocks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/code_stocks"
+        android:text="name"
+        android:layout_marginTop="6dp"
+        android:textSize="25sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/code_stocks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="code"
+        android:layout_marginTop="6dp"
+        android:textSize="35sp"
+        android:textStyle="bold" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/last_stocks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="last"
+        android:layout_marginTop="6dp"
+        android:textSize="35sp" >
+    </TextView>
+
+<!--     <CheckBox -->
+<!--         android:id="@+id/checkBox_stocks_follow" -->
+<!--         style="?android:attr/starStyle" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" /> -->
+
+<!--     <CheckBox -->
+<!--         android:id="@+id/checkBox_stocks_invest" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" /> -->
+
+    <TextView
+        android:id="@+id/day_change_stocks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="lastday"
+        android:textSize="22sp"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/last_stocks" />
+
+</RelativeLayout>

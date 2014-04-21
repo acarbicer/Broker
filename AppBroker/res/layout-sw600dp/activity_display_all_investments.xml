@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayAllInvestments" >
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="38dp"
+        android:prompt="@string/display_prompt" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/allinvest_list_ustbar"
+        android:layout_marginTop="0dp" >
+    </ListView>
+
+    <ListView
+        android:id="@+id/listView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/allinvest_list_ustbar"
+        android:layout_marginTop="0dp"
+        android:visibility="invisible" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/imgviewBorsa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/allinvest_list_ustbar"
+        android:layout_marginTop="0dp"
+        android:text="asdasdasd"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/allinvest_ustbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ustbar_display_all_invest" />
+
+    <ImageView
+        android:id="@+id/allinvest_list_ustbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_ustbar" />
+
+    <Button
+        android:id="@+id/allinvest_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/refreshbutton" />
+
+    <ProgressBar
+        android:id="@+id/allinvest_progress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+         >
+    </ProgressBar>
+
+</RelativeLayout>

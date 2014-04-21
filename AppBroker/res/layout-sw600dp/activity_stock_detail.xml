@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/ustbar_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ustbardetail" />
+
+    <TextView
+        android:id="@+id/ad_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ADANA ÇİMENTO"
+        android:textColor="@android:color/white"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/kod_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="ADBGR"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/deger_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="2.55"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/degisim_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="0.00"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/eniyialis_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="En İyi Alış"
+        android:textStyle="bold" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/eniyisatis_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="En İyi Satış"
+        android:textStyle="bold" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/gununenyuksek_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Günün En Yüksek"
+        android:textStyle="bold" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/gununendusuk_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Günün En Düşük"
+        android:textStyle="bold" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tavan_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tavan"
+        android:textStyle="bold"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/taban_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Taban"
+        android:textStyle="bold" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/eniyialis_num_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/eniyisatis_num_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/gununenyuksek_num_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/gununendusuk_num_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tavan_num_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/taban_num_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tarih_text_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="23.3.2014 17.56"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/degisim_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Değişim Oranı:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/saat_stock_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Son Güncelleme:"
+        android:textSize="20sp" />
+
+</RelativeLayout>

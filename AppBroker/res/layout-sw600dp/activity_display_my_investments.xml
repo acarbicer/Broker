@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayMyInvestments" >
+
+    <ListView
+        android:id="@+id/listView_MyInvest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/myinvest_listbar"
+        android:layout_marginTop="0dp" >
+    </ListView>
+
+
+
+    <Button
+        android:id="@+id/button_MyInvest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/imgbutton"
+        android:text="INVEST"
+        android:textColor="#FFF"
+        android:textSize="40sp" />
+
+    <EditText
+        android:id="@+id/editText_MyInvest"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Amount"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/my_invest_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chose Investment Type: "
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spinner_MyInvest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:prompt="@string/display_prompt"
+         />
+
+    <ImageView
+        android:id="@+id/myinvest_ustbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ustbar_display_my_invest" />
+
+    <ImageView
+        android:id="@+id/myinvest_listbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_myinv_ustbar" />
+
+</RelativeLayout>
