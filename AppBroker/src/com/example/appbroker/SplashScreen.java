@@ -14,7 +14,7 @@ public class SplashScreen extends Activity {
 	private ImageView backgr;
 	private Intent intent;
 
-	// Splash screen timer (5 seconds)
+	// Splash screen timer (3 seconds)
 	private static int SPLASH_TIME_OUT = 3000;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

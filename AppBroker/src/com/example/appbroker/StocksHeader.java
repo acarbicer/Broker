@@ -5,6 +5,20 @@ public class StocksHeader {
 	public double dblYuzdeDegisimGunluk;
 	public String strAd;
 	public String strKod;
+	
+	public StocksHeader() {
+		super();
+		
+	}
+	
+	public StocksHeader(double dblSon, double dblYuzdeDegisimGunluk,
+			String strAd, String strKod) {
+		super();
+		this.dblSon = dblSon;
+		this.dblYuzdeDegisimGunluk = dblYuzdeDegisimGunluk;
+		this.strAd = strAd;
+		this.strKod = strKod;
+	}
 	public double getDblSon() {
 		return dblSon;
 	}

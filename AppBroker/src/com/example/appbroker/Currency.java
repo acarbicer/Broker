@@ -12,7 +12,28 @@ public class Currency {
 	private String date;
 	private String invest;
 	private String follow;
-	
+	private String firstInvest;
+	private String lastInvest;
+	private String lastValue;
+	public Currency(String name, String code, double buy, double sell,
+			double ebuy, double esell, String tl, String way, String date,
+			String invest, String follow,String firstInvest, String lastInvest,String lastValue) {
+		super();
+		this.name = name;
+		this.code = code;
+		this.buy = buy;
+		this.sell = sell;
+		this.ebuy = ebuy;
+		this.esell = esell;
+		this.tl = tl;
+		this.way = way;
+		this.date = date;
+		this.invest = invest;
+		this.follow = follow;
+		this.firstInvest = firstInvest;
+		this.lastInvest = lastInvest;
+		this.lastValue = lastValue;
+	}
 	public Currency(String name, String code, double buy, double sell,
 			double ebuy, double esell, String tl, String way, String date,
 			String invest, String follow) {
@@ -28,6 +49,7 @@ public class Currency {
 		this.date = date;
 		this.invest = invest;
 		this.follow = follow;
+		
 	}
 
 	public Currency() {
@@ -35,6 +57,28 @@ public class Currency {
 	}
 
 	
+
+	public String getLastValue() {
+        return lastValue;
+    }
+    public void setLastValue(String lastValue) {
+        this.lastValue = lastValue;
+    }
+    public String getFirstInvest() {
+		return firstInvest;
+	}
+
+	public void setFirstInvest(String firstInvest) {
+		this.firstInvest = firstInvest;
+	}
+
+	public String getLastInvest() {
+		return lastInvest;
+	}
+
+	public void setLastInvest(String lastInvest) {
+		this.lastInvest = lastInvest;
+	}
 
 	public String getName() {
 		return name;

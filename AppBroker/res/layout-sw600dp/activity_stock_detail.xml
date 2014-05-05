@@ -19,7 +19,7 @@
         android:gravity="center"
         android:text="ADANA ÇİMENTO"
         android:textColor="@android:color/white"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="2.55"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <TextView
@@ -52,91 +52,91 @@
         android:id="@+id/eniyialis_text_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="En İyi Alış"
-        android:textStyle="bold" 
-        android:textSize="20sp"/>
+        android:text="En İyi Alış:"
+        android:textStyle="bold"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/eniyisatis_text_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="En İyi Satış"
-        android:textStyle="bold" 
-        android:textSize="20sp"/>
+        android:text="En İyi Satış:"
+        android:textStyle="bold"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/gununenyuksek_text_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Günün En Yüksek"
-        android:textStyle="bold" 
-        android:textSize="20sp"/>
+        android:text="En Yüksek:"
+        android:textStyle="bold"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/gununendusuk_text_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Günün En Düşük"
-        android:textStyle="bold" 
-        android:textSize="20sp"/>
+        android:text="En Düşük:"
+        android:textStyle="bold"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tavan_text_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tavan"
+        android:text="Tavan:"
         android:textStyle="bold"
-        android:textSize="20sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/taban_text_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Taban"
+        android:text="Taban:"
         android:textStyle="bold" 
-        android:textSize="20sp"/>
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/eniyialis_num_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0" 
-        android:textSize="20sp"/>
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/eniyisatis_num_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0" 
-        android:textSize="20sp"/>
+        android:text="0"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/gununenyuksek_num_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0" 
-        android:textSize="20sp"/>
+        android:text="0"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/gununendusuk_num_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0" 
-        android:textSize="20sp"/>
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/tavan_num_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0" 
-        android:textSize="20sp"/>
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/taban_num_stock_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="20sp" />
+        android:text="0" 
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/tarih_text_stock_detail"
@@ -144,6 +144,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="23.3.2014 17.56"
+        
         android:textSize="30sp" />
 
     <TextView
@@ -152,7 +153,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Değişim Oranı:"
-        android:textSize="20sp" />
+        android:textStyle="bold" 
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/saat_stock_detail"
@@ -160,6 +162,20 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Son Güncelleme:"
-        android:textSize="20sp" />
+        android:textStyle="bold" 
+        android:textSize="25sp" />
+
+    <ImageView
+        android:id="@+id/followbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:background="@drawable/follow" />
+     <ImageView
+        android:id="@+id/investbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:background="@drawable/invest" />
 
 </RelativeLayout>

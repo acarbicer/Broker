@@ -4,29 +4,77 @@
     android:layout_height="match_parent"
     tools:context=".DisplayMyInvestments" >
 
-    <ListView
-        android:id="@+id/listView_MyInvest"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/myinvest_listbar"
-        android:layout_marginTop="0dp" >
-    </ListView>
+    <ViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/myinvest_listbar" >
+
+        <!-- The child Views/Layout to flip -->
 
 
+        <!-- Layout 1 for 1st Screen -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="top"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listView_MyInvest"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="0dp" >
+            </ListView>
+        </LinearLayout>
+        <!-- Layout 2 for 2nd Screen -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="top"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listView_MyInvest_Stock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </ListView>
+        </LinearLayout>
+    </ViewFlipper>
+
+    <ImageView
+        android:id="@+id/doviz_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/invisible" />
+
+    <ImageView
+        android:id="@+id/piyasa_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/invisible" />
+
+    <ImageView
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/currency_pressed" />
 
     <Button
         android:id="@+id/button_MyInvest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/imgbutton"
-        android:text="INVEST"
+        android:background="@drawable/investbutton"
+        android:text=""
         android:textColor="#FFF"
         android:textSize="30sp" />
 
     <EditText
         android:id="@+id/editText_MyInvest"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Enter Amount"
@@ -44,8 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:prompt="@string/display_prompt"
-         />
+        android:prompt="@string/display_prompt" />
 
     <ImageView
         android:id="@+id/myinvest_ustbar"

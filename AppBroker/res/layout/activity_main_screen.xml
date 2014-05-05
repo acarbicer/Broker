@@ -5,36 +5,36 @@
     tools:context=".MainScreen" >
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/dispMyInt"
         android:layout_width="120dp"
         android:layout_height="120dp"
 		android:background="@drawable/imgbutton"
-        android:text="Display My Interested Items"
+        android:text=""
         android:textColor="#FFF" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/dispGraph"
         android:layout_width="120dp"
         android:layout_height="120dp"
-		android:background="@drawable/imgbutton"
-        android:text="Display My Investments on Graphic" 
+		android:background="@drawable/graphbutton"
+        android:text="" 
          android:textColor="#FFF"/>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/dispAllInv"
         android:layout_width="120dp"
         android:layout_height="120dp"
-		android:background="@drawable/imgbutton"
+		android:background="@drawable/allbutton"
         android:lines="2"
-        android:text="Display All Investments" 
+        android:text="" 
          android:textColor="#FFF"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/dispMyInv"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:background="@drawable/imgbutton"
-        android:text="Display My Investments"
+        android:background="@drawable/mybutton"
+        android:text=""
          android:textColor="#FFF" />
 
     <ImageView

@@ -133,12 +133,11 @@ public class MyInvestListAdapter extends ArrayAdapter<Currency> {
 								Currency c ;
 								c = DisplayMyInvestments.currency_list.get(position);
 								calculateRowId(c);
-								DisplayMyInvestments.updateDB(rowId,"N");
-								String tempCode= DisplayMyInvestments.currency_list.get(position).getCode();
+								DisplayMyInvestments.updateDB(c.getCode(),"N");
 								DisplayMyInvestments.currency_list
-								.remove(position);
-								DisplayMyInvestments.spinner_list.remove(position);
-								Toast.makeText(getContext(), tempCode + " is Removed", Toast.LENGTH_SHORT)
+								.remove(c);
+								DisplayMyInvestments.spinner_list.remove(c.getCode());
+								Toast.makeText(getContext(), c.getCode() + " is Removed", Toast.LENGTH_SHORT)
 										.show();
 								//refresh listview
 								notifyDataSetChanged();

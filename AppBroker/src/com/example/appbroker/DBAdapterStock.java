@@ -49,6 +49,11 @@ public class DBAdapterStock {
 	public static final String KEY_GK = "strGrupKodu";
 	public static final String KEY_AD = "strAd";
 	public static final String KEY_END = "strEndeks";
+	public static final String KEY_FLW = "follow";
+	public static final String KEY_INV = "invest";
+	public static final String KEY_FRS = "first_invest";
+	public static final String KEY_LST = "last_invest";
+	public static final String KEY_LVAL = "lastValue";
 	private static final String TAG = "DBAdapterStock"; // For Logcat
 
 	private static final String DATABASE_NAME = "investmentDB";
@@ -86,7 +91,12 @@ public class DBAdapterStock {
 			+ "dblFiyatAdimi numeric not null, "
 			+ "strGrupKodu text not null, "
 			+ "strAd text not null, "
-			+ "strEndeks text not null);";
+			+ "strEndeks text not null);"
+			+ "follow text not null, "
+			+ "invest text not null)"
+			+ "first_invest text not null, "
+			+ "last_invest text not null),"
+			+"lastValue text not null;";
 
 	// Constructor
 	public DBAdapterStock(Context context) {
@@ -157,7 +167,7 @@ public class DBAdapterStock {
 			double dblYuzdeDegisim, double dblFarkSeans,
 			double dblYuzdeDegisimGunluk, double dblFarkGunluk,
 			double dblFiyatAdimi, String strGrupKodu, String strAd,
-			String strEndeks) {
+			String strEndeks, String follow, String invest,String first_invest, String last_invest,String lastValue) {
 		// The class ContentValues allows to define key/values. The "key"
 		// represents the
 		// table column identifier and the "value" represents the content for
@@ -200,6 +210,11 @@ public class DBAdapterStock {
 		initialValues.put(KEY_GK, strGrupKodu);
 		initialValues.put(KEY_AD, strAd);
 		initialValues.put(KEY_END, strEndeks);
+		initialValues.put(KEY_FLW, strAd);
+		initialValues.put(KEY_INV, strEndeks);
+		initialValues.put(KEY_FRS, first_invest);
+		initialValues.put(KEY_LST, last_invest);
+		initialValues.put(KEY_LVAL, lastValue);
 		return db.insert(DATABASE_TABLE, null, initialValues);
 	}
 
@@ -209,7 +224,7 @@ public class DBAdapterStock {
 	}
 
 	// Retrieves all the contacts
-	public Cursor getAllCurrencies() {
+	public Cursor getAllStocks() {
 		return db.query(DATABASE_TABLE, new String[] { KEY_ROWID, KEY_KOD,
 				KEY_AD, KEY_YDG, KEY_YD, KEY_SAAT }, null, null, null, null,
 				null);
@@ -240,19 +255,47 @@ public class DBAdapterStock {
 		}
 		return mCursor;
 	}
-	// Retrieves a particular contact
-		public Cursor getStockDetail(String strKod) throws SQLException {
 
-			Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] {
-					 KEY_AD, KEY_KOD, KEY_SON, KEY_YDG, KEY_GED , KEY_GEY, KEY_EIA, KEY_EIS, KEY_TAB, KEY_TAV, KEY_SAAT}, KEY_KOD
-					+ "='" + strKod + "'", null, null, null, null, null);
+	// Retrieves a particular contact
+	public Cursor getStockDetail(String strKod) throws SQLException {
+
+		Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] { KEY_AD,
+				KEY_KOD, KEY_SON, KEY_YDG, KEY_GED, KEY_GEY, KEY_EIA, KEY_EIS,
+				KEY_TAB, KEY_TAV, KEY_SAAT, KEY_FLW, KEY_INV , KEY_FRS, KEY_LST}, KEY_KOD + "='"
+				+ strKod + "'", null, null, null, null, null);
+
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		return mCursor;
+	}
+
+	// Retrieves a particular contact
+	public Cursor getStockInvest() throws SQLException {
+
+		Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] { KEY_AD,
+				KEY_KOD, KEY_SON, KEY_YDG, KEY_GED, KEY_GEY, KEY_EIA, KEY_EIS,
+				KEY_TAB, KEY_TAV, KEY_SAAT, KEY_FLW, KEY_INV , KEY_FRS, KEY_LST, KEY_LVAL}, KEY_INV + "='"
+				+ "yes" + "'", null, null, null, null, null);
+
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		return mCursor;
+	}
+	// Retrieves a particular contact
+		public Cursor getStockInterest() throws SQLException {
+
+			Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] { KEY_AD,
+					KEY_KOD, KEY_SON, KEY_YDG, KEY_GED, KEY_GEY, KEY_EIA, KEY_EIS,
+					KEY_TAB, KEY_TAV, KEY_SAAT, KEY_FLW, KEY_INV }, KEY_FLW + "='"
+					+ "yes" + "'", null, null, null, null, null);
 
 			if (mCursor != null) {
 				mCursor.moveToFirst();
 			}
 			return mCursor;
 		}
-
 	// Retrieves a particular contact
 	// public Cursor getInteresteds(String follow) throws SQLException {
 	//
@@ -361,4 +404,47 @@ public class DBAdapterStock {
 		return db.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
 	}
 
+	public boolean updateStocksFollow(String strKod, String follow) {
+		// This methods returns the number of rows affected by the conducted
+		// operation
+		ContentValues args = new ContentValues();
+		args.put(KEY_KOD, strKod);
+		args.put(KEY_FLW, follow);
+		return db.update(DATABASE_TABLE, args, KEY_KOD + "='" + strKod + "'",
+				null) > 0;
+	}
+
+	public boolean updateStocksInvest(String strKod, String invest) {
+		// This methods returns the number of rows affected by the conducted
+		// operation
+		ContentValues args = new ContentValues();
+		args.put(KEY_KOD, strKod);
+		args.put(KEY_INV, invest);
+		return db.update(DATABASE_TABLE, args, KEY_KOD + "='" + strKod + "'",
+				null) > 0;
+	}
+	public boolean updateStocksFirstInvested(String code,String date) {
+		// This methods returns the number of rows affected by the conducted
+		// operation
+		
+		ContentValues args = new ContentValues();
+		args.put(KEY_FRS, date);
+		return db.update(DATABASE_TABLE, args, KEY_KOD + "='" + code +"'", null) > 0;
+	}
+	public boolean updateStocksLastInvested(String code,String date) {
+		// This methods returns the number of rows affected by the conducted
+		// operation
+		
+		ContentValues args = new ContentValues();
+		args.put(KEY_LST, date);
+		return db.update(DATABASE_TABLE, args, KEY_KOD + "='" + code +"'", null) > 0;
+	}
+	public boolean updateStocksLastValue(String code,String lastValue) {
+        // This methods returns the number of rows affected by the conducted
+        // operation
+        
+        ContentValues args = new ContentValues();
+        args.put(KEY_LVAL, lastValue);
+        return db.update(DATABASE_TABLE, args, KEY_KOD + "='" + code +"'", null) > 0;
+    }
 }

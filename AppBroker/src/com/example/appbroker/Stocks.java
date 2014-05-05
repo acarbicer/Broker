@@ -37,8 +37,131 @@ public class Stocks {
 	public String strEndeks;
 	public String strSaat;
 	public String strGrupKodu;
-	public boolean invest;
-	public boolean follow;
+	public String invest;
+	public String follow;
+	public String firstInvest;
+	public String lastInvest;
+	private String lastValue;
+	
+
+	public Stocks(String strKod, double dblGunEnDusuk, double dblGunEnYuksek,
+			double dblSon, double dblTaban, double dblTavan,
+			 double dblYuzdeDegisimGunluk, String strAd,
+			String strSaat, String invest, String follow, String firstInvest,
+			String lastInvest,String lastValue) {
+		super();
+		this.strKod = strKod;
+		this.dblGunEnDusuk = dblGunEnDusuk;
+		this.dblGunEnYuksek = dblGunEnYuksek;
+		this.dblSon = dblSon;
+		this.dblTaban = dblTaban;
+		this.dblTavan = dblTavan;
+		this.dblYuzdeDegisimGunluk = dblYuzdeDegisimGunluk;
+		this.strAd = strAd;
+		this.strSaat = strSaat;
+		this.invest = invest;
+		this.follow = follow;
+		this.firstInvest = firstInvest;
+		this.lastInvest = lastInvest;
+		this.lastValue = lastValue;
+	}
+
+	public Stocks(String strKod, String strSeri, String strPiyasa,
+			double dblEnDusuk1, double dblEnDusuk2, double dblEnIyiAlis,
+			double dblEnIyiSatis, double dblEnYuksek1, double dblEnYuksek2,
+			double dblFarkGunluk, double dblFarkSeans, double dblGunEnDusuk,
+			double dblGunEnYuksek, double dblKapanis1, double dblKapanis2,
+			double dblOncekiKapanis1, double dblOncekiKapanis2,
+			double dblOncekiSon, double dblOrtalama1, double dblOrtalama2,
+			double dblSon, double dblSonAdet, double dblTaban, double dblTavan,
+			double dblToplamAdet1, double dblToplamAdet2,
+			double dblToplamHacim1, double dblToplamHacim2,
+			double dblYuzdeDegisim, double dblYuzdeDegisimGunluk,
+			double dblFiyatAdimi, String strAd, String strEndeks,
+			String strSaat, String strGrupKodu, String invest, String follow,
+			String firstInvest, String lastInvest) {
+		super();
+		this.strKod = strKod;
+		this.strSeri = strSeri;
+		this.strPiyasa = strPiyasa;
+		this.dblEnDusuk1 = dblEnDusuk1;
+		this.dblEnDusuk2 = dblEnDusuk2;
+		this.dblEnIyiAlis = dblEnIyiAlis;
+		this.dblEnIyiSatis = dblEnIyiSatis;
+		this.dblEnYuksek1 = dblEnYuksek1;
+		this.dblEnYuksek2 = dblEnYuksek2;
+		this.dblFarkGunluk = dblFarkGunluk;
+		this.dblFarkSeans = dblFarkSeans;
+		this.dblGunEnDusuk = dblGunEnDusuk;
+		this.dblGunEnYuksek = dblGunEnYuksek;
+		this.dblKapanis1 = dblKapanis1;
+		this.dblKapanis2 = dblKapanis2;
+		this.dblOncekiKapanis1 = dblOncekiKapanis1;
+		this.dblOncekiKapanis2 = dblOncekiKapanis2;
+		this.dblOncekiSon = dblOncekiSon;
+		this.dblOrtalama1 = dblOrtalama1;
+		this.dblOrtalama2 = dblOrtalama2;
+		this.dblSon = dblSon;
+		this.dblSonAdet = dblSonAdet;
+		this.dblTaban = dblTaban;
+		this.dblTavan = dblTavan;
+		this.dblToplamAdet1 = dblToplamAdet1;
+		this.dblToplamAdet2 = dblToplamAdet2;
+		this.dblToplamHacim1 = dblToplamHacim1;
+		this.dblToplamHacim2 = dblToplamHacim2;
+		this.dblYuzdeDegisim = dblYuzdeDegisim;
+		this.dblYuzdeDegisimGunluk = dblYuzdeDegisimGunluk;
+		this.dblFiyatAdimi = dblFiyatAdimi;
+		this.strAd = strAd;
+		this.strEndeks = strEndeks;
+		this.strSaat = strSaat;
+		this.strGrupKodu = strGrupKodu;
+		this.invest = invest;
+		this.follow = follow;
+		this.firstInvest = firstInvest;
+		this.lastInvest = lastInvest;
+	}
+
+	public Stocks() {
+		super();
+	}
+	public String getLastValue() {
+        return lastValue;
+    }
+    public void setLastValue(String lastValue) {
+        this.lastValue = lastValue;
+    }
+	public String getInvest() {
+		return invest;
+	}
+
+	public void setInvest(String invest) {
+		this.invest = invest;
+	}
+
+	public String getFollow() {
+		return follow;
+	}
+
+	public void setFollow(String follow) {
+		this.follow = follow;
+	}
+
+	public String getFirstInvest() {
+		return firstInvest;
+	}
+
+	public void setFirstInvest(String firstInvest) {
+		this.firstInvest = firstInvest;
+	}
+
+	public String getLastInvest() {
+		return lastInvest;
+	}
+
+	public void setLastInvest(String lastInvest) {
+		this.lastInvest = lastInvest;
+	}
 
 	public String getStrKod() {
 		return strKod;
@@ -320,20 +443,6 @@ public class Stocks {
 		this.strGrupKodu = strGrupKodu;
 	}
 
-	public boolean isInvest() {
-		return invest;
-	}
 
-	public void setInvest(boolean invest) {
-		this.invest = invest;
-	}
-
-	public boolean isFollow() {
-		return follow;
-	}
-
-	public void setFollow(boolean follow) {
-		this.follow = follow;
-	}
 
 }

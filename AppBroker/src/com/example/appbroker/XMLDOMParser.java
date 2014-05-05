@@ -35,13 +35,7 @@ public class XMLDOMParser {
         return document;
     }
  
-    /*
-     * I take a XML element and the tag name, look for the tag and get the text
-     * content i.e for <employee><name>Kumar</name></employee> XML snippet if
-     * the Element points to employee node and tagName is name I will return
-     * Kumar. Calls the private method getTextNodeValue(node) which returns the
-     * text value, say in our example it is Kumar.
-     */
+    
     public String getValue(Element item, String name) {
         NodeList nodes = item.getElementsByTagName(name);
         return this.getTextNodeValue(nodes.item(0));

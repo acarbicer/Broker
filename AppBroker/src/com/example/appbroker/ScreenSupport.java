@@ -8,11 +8,7 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
-/**
- * 
- *
- * 
- */
+
 
 public class ScreenSupport {
 

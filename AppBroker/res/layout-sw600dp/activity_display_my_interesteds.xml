@@ -4,15 +4,65 @@
     android:layout_height="match_parent"
     tools:context=".DisplayMyInvestments" >
 
-    <ListView
-        android:id="@+id/listView_MyInvest"
+    
+<ViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/myinterested_listbar" >
+
+        <!-- The child Views/Layout to flip -->
+
+
+        <!-- Layout 1 for 1st Screen -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="top"
+            android:orientation="vertical" >
+
+           <ListView
+        android:id="@+id/listView_myinterested_currency"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/myinterested_listbar"
-        android:layout_marginTop="0dp"
-        android:layout_alignParentLeft="true"
+        
+        
          >
     </ListView>
+        </LinearLayout>
+        <!-- Layout 2 for 2nd Screen -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="top"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listView_myinterested_stock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </ListView>
+        </LinearLayout>
+    </ViewFlipper>
+    <ImageView
+        android:id="@+id/doviz_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/invisible" />
+
+    <ImageView
+        android:id="@+id/piyasa_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/invisible" />
+    <ImageView
+        android:id="@+id/button_back_interested"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/currency_pressed" />
 
     <ImageView
         android:id="@+id/myinterested_ustbar"

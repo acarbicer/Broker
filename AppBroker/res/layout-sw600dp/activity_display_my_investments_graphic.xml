@@ -10,382 +10,120 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ustbar_display_my_invest_gr" />
 
-    <TableLayout
-        android:id="@+id/table"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/imagebar"
-        android:layout_marginTop="35dp"
-        android:stretchColumns="0,1,2,3,4" >
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            
-            <TextView
-                android:id="@+id/tableRow1Col1"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Currency"
-            	android:textStyle="bold" />
-            <TextView
-                android:id="@+id/tableRow1Col2"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Percentage"
-            	android:textStyle="bold" />
-            <TextView
-                android:id="@+id/tableRow1Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Value"
-            	android:textStyle="bold" />
-            <TextView
-                android:id="@+id/tableRow1Col4"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Status"
-            	android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/tableRow2Col1"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Dolar" />
-            <TextView
-                android:id="@+id/tableRow2Col2"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="%12" />
-            <TextView
-                android:id="@+id/tableRow2Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="2.7645" />
-             <TextView
-                android:id="@+id/tableRow2Col4"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="UP"
-            	android:gravity="center" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/tableRow3Col1"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="Euro"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow3Col2"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="%40"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow3Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="2.8998"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow3Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="UP"
-            	android:gravity="center" />
-        </TableRow>
-		<TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/tableRow3Col1"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Sterlin" />
-            <TextView
-                android:id="@+id/tableRow3Col2"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="%12" />
-            <TextView
-                android:id="@+id/tableRow3Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="2.975" />
-             <TextView
-                android:id="@+id/tableRow3Col4"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="UP"
-            	android:gravity="center" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/tableRow4Col1"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="Yen"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow4Col2"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="%40"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow4Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="0.3566"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow4Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="DOWN"
-            	android:gravity="center" />
-        </TableRow>
-        
-    </TableLayout>
-<TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/table"
-        android:layout_marginTop="35dp"
-        android:layout_centerHorizontal="true"
-        android:stretchColumns="0,1,2,3,4" >
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            
-            <TextView
-                android:id="@+id/tableRow1Col1"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Currency"
-            	android:textStyle="bold" />
-            <TextView
-                android:id="@+id/tableRow1Col2"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="First Date"
-            	android:textStyle="bold" />
-            <TextView
-                android:id="@+id/tableRow1Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Value"
-            	android:textStyle="bold" />
-             <TextView
-                android:id="@+id/tableRow1Col4"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Today"
-            	android:textStyle="bold" />
-             <TextView
-                android:id="@+id/tableRow1Col5"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Value"
-            	android:textStyle="bold" />
-            
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/tableRow2Col1"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Dolar" />
-            <TextView
-                android:id="@+id/tableRow2Col2"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="22.10.2013" />
-            <TextView
-                android:id="@+id/tableRow2Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="%5" />
-            <TextView
-                android:id="@+id/tableRow2Col4"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="27.12.2013" />
-            <TextView
-                android:id="@+id/tableRow2Col5"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="%3" />
-            
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/tableRow3Col1"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="Euro"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow3Col2"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="18.10.2013"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow3Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="%3"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow3Col4"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="27.12.2013"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow3Col5"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="%5"
-            	android:gravity="center" />
-        </TableRow>
-		<TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/tableRow3Col1"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="Yen" />
-            <TextView
-                android:id="@+id/tableRow3Col2"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="05.09.2012" />
-            <TextView
-                android:id="@+id/tableRow3Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="%4" />
-            <TextView
-                android:id="@+id/tableRow3Col4"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="27.12.2013" />
-            <TextView
-                android:id="@+id/tableRow3Col5"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:gravity="center"
-            	android:text="%2" />
-            
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/tableRow4Col1"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="GBP"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow4Col2"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="27.07.2013"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow4Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="%4"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow4Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="27.12.2013"
-            	android:gravity="center" />
-            <TextView
-                android:id="@+id/tableRow4Col3"
-            	android:layout_width="wrap_content"
-            	android:layout_height="wrap_content"
-            	android:text="%2"
-            	android:gravity="center" />
-            
-        </TableRow>
-        
-    </TableLayout>
     <ImageView
-        android:id="@+id/imagepie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:background="@drawable/piechart" />
-    <ImageView
-        android:id="@+id/imagebar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       
-        android:background="@drawable/bar" />
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@android:id/tabhost"
+        android:layout_below="@+id/disp_graphic_ustbar" />
 
+    <ImageView
+        android:id="@+id/buttonbackgraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/currency_pressed" />
+
+    <ImageView
+        android:id="@+id/doviz_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/invisible" />
+
+    <ImageView
+        android:id="@+id/piyasa_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/invisible" />
+
+    <ImageView
+        android:id="@+id/currencyGraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/disp_graphic_ustbar" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="horizontal" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/tabviewpager"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </TabHost>
+
+    <Spinner
+        android:id="@+id/spinnerinvestgraphics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/spinnerinvestcurrencygraphics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView 
+        android:id="@+id/graphicscurrencyname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="21sp"
+        android:paddingLeft="5dp"/>
+    <TextView 
+        android:id="@+id/graphicscurrencyfirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="21sp"
+        android:paddingLeft="5dp"/>
+    <TextView 
+        android:id="@+id/graphicscurrencylast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="21sp"
+        android:paddingLeft="5dp"/>
+ <TextView
+        android:id="@+id/graphicscurrencylastvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:textSize="21sp" />
+
+    <TextView
+        android:id="@+id/graphicscurrencylastamount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:textSize="21sp" />
+
+    <TextView
+        android:id="@+id/graphicscurrencylastinvestment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:textSize="21sp" />
+
+    <TextView
+        android:id="@+id/graphicscurrencyestimation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:textSize="21sp" />
 </RelativeLayout>

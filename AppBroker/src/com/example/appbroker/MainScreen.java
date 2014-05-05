@@ -32,10 +32,10 @@ public class MainScreen extends Activity {
 		}
 		
 		ustbar = (ImageView)findViewById(R.id.main_ustbar);
-		dispAllInv = (Button)findViewById(R.id.button1);
-		dispMyInv = (Button)findViewById(R.id.button2);
-		dispMyInt = (Button)findViewById(R.id.button3);
-		dispGraph = (Button)findViewById(R.id.button4);
+		dispAllInv = (Button)findViewById(R.id.dispAllInv);
+		dispMyInv = (Button)findViewById(R.id.dispMyInv);
+		dispMyInt = (Button)findViewById(R.id.dispMyInt);
+		dispGraph = (Button)findViewById(R.id.dispGraph);
 		
 		dispAllInv.setOnClickListener(new OnClickListener() {
 			
@@ -99,10 +99,10 @@ public class MainScreen extends Activity {
 		
 		
 		ScreenSupport.getLayoutParams(ustbar, ctx, 720, 100, 0, 0, 720, 1280);
-		ScreenSupport.getLayoutParams(dispAllInv, ctx, 315, 315, 30, 300, 720, 1280);
-		ScreenSupport.getLayoutParams(dispMyInv, ctx, 315, 315, 375, 300, 720, 1280);
-		ScreenSupport.getLayoutParams(dispMyInt, ctx, 315, 315, 30, 700, 720, 1280);
-		ScreenSupport.getLayoutParams(dispGraph, ctx, 315, 315, 375, 700, 720, 1280);
+		ScreenSupport.getLayoutParams(dispAllInv, ctx, 315, 440, 30, 200, 720, 1280);
+		ScreenSupport.getLayoutParams(dispMyInv, ctx, 315, 440, 375, 200, 720, 1280);
+		ScreenSupport.getLayoutParams(dispMyInt, ctx, 315, 440, 30, 720, 720, 1280);
+		ScreenSupport.getLayoutParams(dispGraph, ctx, 315, 440, 375, 720, 720, 1280);
 	}
 
 	@Override

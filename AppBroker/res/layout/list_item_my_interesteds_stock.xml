@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/remove_my_interest"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/remove" />
+
+    <TextView
+        android:id="@+id/code_my_interest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name_my_interest"
+        android:layout_alignTop="@+id/remove_my_interest"
+        android:text="ACSEL"
+        android:textColor="#000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/name_my_interest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/code_my_interest"
+        android:text="ACIPAYAM SELÜLOZ"
+        android:textColor="#000"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/change_my_interest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/name_my_interest"
+        android:layout_marginRight="22dp"
+        android:layout_toLeftOf="@+id/val_my_interest"
+        android:text="Change"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/val_my_interest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/change_my_interest"
+        android:layout_alignBottom="@+id/change_my_interest"
+        android:layout_marginRight="40dp"
+        android:layout_toLeftOf="@+id/remove_my_interest"
+        android:text="Value"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+</RelativeLayout>

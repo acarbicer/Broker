@@ -13,18 +13,23 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class StockDetailActivity extends Activity {
-	TextView ad, kod, deger, degisim, alis, satis, taban, tavan, dusuk, yuksek,alisNum, satisNum, tabanNum, tavanNum, dusukNum, yuksekNum,
-			tarih,tarihText,degisimText;
-	ImageView ustbar;
+	TextView ad, kod, deger, degisim, alis, satis, taban, tavan, dusuk, yuksek,
+			alisNum, satisNum, tabanNum, tavanNum, dusukNum, yuksekNum, tarih,
+			tarihText, degisimText;
+	ImageView ustbar, followButton,investButton;
+	boolean followCheck,investCheck;
 	Context ctx = this;
 	private static DBAdapterStock dbStock;
 	public Stocks sObject;;
 	public String stockKod;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -56,11 +61,58 @@ public class StockDetailActivity extends Activity {
 		getDataFromDatabase();
 		screenSupportMethod();
 
+		followButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//Checks if the stock is following or not, and sets the following button image
+				if (followCheck) {
+					followButton.setBackgroundResource(R.drawable.follow);
+					dbStock.open();
+					dbStock.updateStocksFollow(stockKod,"no" );
+					dbStock.close();
+					System.out.println("no");
+					followCheck=false;
+				} else {
+					followButton.setBackgroundResource(R.drawable.following);
+					dbStock.open();
+					dbStock.updateStocksFollow(stockKod,"yes" );
+					dbStock.close();
+					followCheck=true;
+					System.out.println("yes");
+				}
+			}
+		});
+		investButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//Checks if the stock is following or not, and sets the following button image
+				if (investCheck) {
+					investButton.setBackgroundResource(R.drawable.invest);
+					dbStock.open();
+					dbStock.updateStocksInvest(stockKod,"no" );
+					dbStock.close();
+					System.out.println("no");
+					investCheck=false;
+				} else {
+					investButton.setBackgroundResource(R.drawable.investing);
+					dbStock.open();
+					dbStock.updateStocksInvest(stockKod,"yes" );
+					dbStock.close();
+					investCheck=true;
+					System.out.println("yes");
+				}
+			}
+		});
 	}
 
 	public void createViews() {
 		ustbar = (ImageView) findViewById(R.id.ustbar_stock_detail);
-
+		followButton = (ImageView) findViewById(R.id.followbutton);
+		investButton = (ImageView) findViewById(R.id.investbutton);
 		ad = (TextView) findViewById(R.id.ad_text_stock_detail);
 		kod = (TextView) findViewById(R.id.kod_text_stock_detail);
 		deger = (TextView) findViewById(R.id.deger_text_stock_detail);
@@ -87,32 +139,44 @@ public class StockDetailActivity extends Activity {
 		ScreenSupport.getLayoutParams(ustbar, ctx, 720, 100, 0, 0, 720, 1280);
 
 		ScreenSupport.getLayoutParams(ad, ctx, 720, 100, 0, 0, 720, 1280);
-		ScreenSupport.getLayoutParams(kod, ctx, 240, 60, 240, 130, 720, 1280);
-		ScreenSupport.getLayoutParams(deger, ctx, 240, 120, 240, 210, 720, 1280);
-		
-		ScreenSupport.getLayoutParams(degisimText, ctx, 240, 40, 0, 300, 720,1280);
-		ScreenSupport.getLayoutParams(tarihText, ctx, 240, 40, 480, 300, 720, 1280);
-		
-		ScreenSupport.getLayoutParams(degisim, ctx, 240, 60, 0, 340, 720,1280);
-		ScreenSupport.getLayoutParams(tarih, ctx, 240, 60, 480, 340, 720, 1280);
-		
-		ScreenSupport.getLayoutParams(alis, ctx, 250, 40, 370, 520, 720, 1280);
-		ScreenSupport.getLayoutParams(satis, ctx, 250, 40, 370, 580, 720, 1280);
-		ScreenSupport.getLayoutParams(tavan, ctx, 250, 40, 370, 640, 720, 1280);
-		
-		ScreenSupport.getLayoutParams(alisNum, ctx, 100, 40, 620, 520, 720, 1280);
-		ScreenSupport.getLayoutParams(satisNum, ctx, 100, 40, 620, 580, 720, 1280);
-		ScreenSupport.getLayoutParams(tavanNum, ctx, 100, 40, 620, 640, 720, 1280);
+		ScreenSupport.getLayoutParams(kod, ctx, 240, 60, 240, 200, 720, 1280);
+		ScreenSupport
+				.getLayoutParams(deger, ctx, 240, 120, 240, 280, 720, 1280);
 
-		ScreenSupport.getLayoutParams(dusuk, ctx, 250, 40, 10, 520, 720, 1280);
-		ScreenSupport.getLayoutParams(yuksek, ctx, 250, 40, 10, 580, 720, 1280);
-		ScreenSupport.getLayoutParams(taban, ctx, 250, 40, 10, 640, 720, 1280);
-		
-		ScreenSupport.getLayoutParams(dusukNum, ctx, 100, 40, 260, 520, 720, 1280);
-		ScreenSupport.getLayoutParams(yuksekNum, ctx, 100, 40, 260, 580, 720, 1280);
-		ScreenSupport.getLayoutParams(tabanNum, ctx, 100, 40, 260, 640, 720, 1280);
+		ScreenSupport.getLayoutParams(degisimText, ctx, 320, 80, 0, 370, 720,
+				1280);
+		ScreenSupport.getLayoutParams(tarihText, ctx, 320, 80, 360, 370, 720,
+				1280);
 
-		 
+		ScreenSupport.getLayoutParams(degisim, ctx, 320, 80, 0, 440, 720, 1280);
+		ScreenSupport.getLayoutParams(tarih, ctx, 320, 80, 360, 440, 720, 1280);
+
+		ScreenSupport.getLayoutParams(alis, ctx, 250, 80, 370, 630, 720, 1280);
+		ScreenSupport.getLayoutParams(satis, ctx, 250, 80, 370, 690, 720, 1280);
+		ScreenSupport.getLayoutParams(tavan, ctx, 250, 80, 370, 750, 720, 1280);
+
+		ScreenSupport.getLayoutParams(alisNum, ctx, 100, 80, 620, 630, 720,
+				1280);
+		ScreenSupport.getLayoutParams(satisNum, ctx, 100, 80, 620, 690, 720,
+				1280);
+		ScreenSupport.getLayoutParams(tavanNum, ctx, 100, 80, 620, 750, 720,
+				1280);
+
+		ScreenSupport.getLayoutParams(dusuk, ctx, 250, 80, 10, 630, 720, 1280);
+		ScreenSupport.getLayoutParams(yuksek, ctx, 250, 80, 10, 690, 720, 1280);
+		ScreenSupport.getLayoutParams(taban, ctx, 250, 80, 10, 750, 720, 1280);
+
+		ScreenSupport.getLayoutParams(dusukNum, ctx, 100, 80, 260, 630, 720,
+				1280);
+		ScreenSupport.getLayoutParams(yuksekNum, ctx, 100, 80, 260, 690, 720,
+				1280);
+		ScreenSupport.getLayoutParams(tabanNum, ctx, 100, 80, 260, 750, 720,
+				1280);
+		
+		ScreenSupport.getLayoutParams(followButton, ctx, 240, 80, 460, 125, 720,
+				1280);
+		ScreenSupport.getLayoutParams(investButton, ctx, 240, 80, 20, 125, 720,
+				1280);
 
 	}
 
@@ -128,13 +192,13 @@ public class StockDetailActivity extends Activity {
 		outputStream.close();
 	}
 
-	public void getDataFromDatabase(){
+	public void getDataFromDatabase() {
 		sObject = new Stocks();
 		dbStock.open();
 		Cursor cr = dbStock.getStockDetail(stockKod);
 		if (cr.moveToFirst()) {
 			do {
-				
+
 				String name = cr.getString(0);
 				String code = cr.getString(1);
 				Double last = cr.getDouble(2);
@@ -146,14 +210,15 @@ public class StockDetailActivity extends Activity {
 				Double lowest = cr.getDouble(8);
 				Double highest = cr.getDouble(9);
 				String time = cr.getString(10);
-				
-				
+				String follow = cr.getString(11);
+				String invest = cr.getString(12);
+
 				System.out.println(changePerDay);
-				
+
 				ad.setText(name);
 				kod.setText(code);
 				deger.setText(new Double(last).toString());
-				degisim.setText(new Double(changePerDay).toString()+"\u0025");
+				degisim.setText(new Double(changePerDay).toString() + "\u0025");
 				alisNum.setText(new Double(buy).toString());
 				satisNum.setText(new Double(sell).toString());
 				tabanNum.setText(new Double(lowest).toString());
@@ -169,13 +234,30 @@ public class StockDetailActivity extends Activity {
 					degisim.setTextColor(Color.parseColor("#EDA41C"));
 				}
 				
+				if(follow.equals("yes")){
+					followCheck=true;
+					followButton.setBackgroundResource(R.drawable.following);
+				}else{
+					followCheck=false;
+					followButton.setBackgroundResource(R.drawable.follow);
+				}
+				
+				if(invest.equals("yes")){
+					investCheck=true;
+					investButton.setBackgroundResource(R.drawable.investing);
+				}else{
+					investCheck=false;
+					investButton.setBackgroundResource(R.drawable.invest);
+				}
+
 			} while (cr.moveToNext());
-			System.out.println(sObject.getStrAd() + "  "
-					+ sObject.getStrKod() + "  " + sObject.getDblSon()
-					+ "  " + sObject.getDblYuzdeDegisimGunluk());
-			
+			System.out.println(sObject.getStrAd() + "  " + sObject.getStrKod()
+					+ "  " + sObject.getDblSon() + "  "
+					+ sObject.getDblYuzdeDegisimGunluk());
+
 		}
 		dbStock.close();
-		
+
 	}
+	
 }

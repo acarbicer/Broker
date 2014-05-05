@@ -24,6 +24,9 @@ public class DBAdapter {
 	public static final String KEY_DATE = "date";
 	public static final String KEY_INVEST = "invest";
 	public static final String KEY_FLW = "follow";
+	public static final String KEY_FRS = "first_invest";
+	public static final String KEY_LST = "last_invest";
+	public static final String KEY_LVAL = "lastValue";
 	private static final String TAG = "DBAdapter"; // For Logcat
 
 	private static final String DATABASE_NAME = "investmentDB";
@@ -31,7 +34,10 @@ public class DBAdapter {
 	private static final int DATABASE_VERSION = 1;
 
 	private static final String DATABASE_CREATE = "create table currency (id integer primary key autoincrement, "
-			+ "name text not null, code text not null, buy numeric not null, sell numeric not null, ebuy numeric not null, esell numeric not null, way text not null, date text not null, invest text not null, follow text not null);";
+						+ "name text not null, code text not null, buy numeric not null, sell numeric not null, " +
+						"ebuy numeric not null, esell numeric not null, way text not null, " +
+						"date text not null, invest text not null, follow text not null, first_invest text not null," +
+						" last_invest text not null, lastValue text not null);";
 
 	// Constructor
 	public DBAdapter(Context context) {
@@ -91,7 +97,7 @@ public class DBAdapter {
 	// Insert a contact into the database
 	public long insertCurrencies(String name, String code, String buy,
 			String sell, String ebuy, String esell, String way, String date,
-			String invest, String follow) {
+			String invest, String follow,String first_invest, String last_invest,String lastValue) {
 		// The class ContentValues allows to define key/values. The "key"
 		// represents the
 		// table column identifier and the "value" represents the content for
@@ -110,6 +116,9 @@ public class DBAdapter {
 		initialValues.put(KEY_DATE, date);
 		initialValues.put(KEY_INVEST, invest);
 		initialValues.put(KEY_FLW, follow);
+		initialValues.put(KEY_FRS, first_invest);
+		initialValues.put(KEY_LST, last_invest);
+		initialValues.put(KEY_LVAL, lastValue);
 		return db.insert(DATABASE_TABLE, null, initialValues);
 	}
 
@@ -119,10 +128,10 @@ public class DBAdapter {
 	}
 
 	// Retrieves all the contacts
-	public Cursor getAllCurrencies() {
+	public Cursor getAllCurrencies() throws SQLException{
 		return db.query(DATABASE_TABLE, new String[] { KEY_ROWID, KEY_NAME,
 				KEY_CODE, KEY_BUY, KEY_SELL, KEY_EBUY, KEY_ESELL, KEY_WAY,
-				KEY_DATE, KEY_INVEST, KEY_FLW }, null, null, null, null, null);
+				KEY_DATE, KEY_INVEST, KEY_FLW}, null, null, null, null, null);
 	}
 
 	// Retrieves a particular contact
@@ -130,7 +139,7 @@ public class DBAdapter {
 
 		Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] {
 				KEY_ROWID, KEY_NAME, KEY_CODE, KEY_BUY, KEY_SELL, KEY_EBUY,
-				KEY_ESELL, KEY_WAY, KEY_DATE, KEY_INVEST, KEY_FLW }, KEY_CODE
+				KEY_ESELL, KEY_WAY, KEY_DATE, KEY_INVEST, KEY_FLW , KEY_FRS, KEY_LST, KEY_LVAL}, KEY_CODE
 				+ "='" + code + "'", null, null, null, null, null);
 
 		if (mCursor != null) {
@@ -144,7 +153,7 @@ public class DBAdapter {
 
 		Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] {
 				KEY_ROWID, KEY_NAME, KEY_CODE, KEY_BUY, KEY_SELL, KEY_EBUY,
-				KEY_ESELL, KEY_WAY, KEY_DATE, KEY_INVEST, KEY_FLW }, KEY_FLW
+				KEY_ESELL, KEY_WAY, KEY_DATE, KEY_INVEST, KEY_FLW , KEY_FRS, KEY_LST}, KEY_FLW
 				+ "='" + follow + "'", null, null, null, null, null);
 
 		if (mCursor != null) {
@@ -154,19 +163,20 @@ public class DBAdapter {
 	}
 
 	// Retrieves a particular contact
-	public Cursor getInvesteds(String invest) throws SQLException {
+	public Cursor getInvesteds() throws SQLException {
 
 		Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] {
 				KEY_ROWID, KEY_NAME, KEY_CODE, KEY_BUY, KEY_SELL, KEY_EBUY,
-				KEY_ESELL, KEY_WAY, KEY_DATE, KEY_INVEST, KEY_FLW }, KEY_INVEST
-				+ "='" + invest + "'", null, null, null, null, null);
+				KEY_ESELL, KEY_WAY, KEY_DATE, KEY_INVEST, KEY_FLW , KEY_FRS, KEY_LST, KEY_LVAL}, KEY_INVEST
+				+ "='Y'", null, null, null, null, null);
 
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 		}
 		return mCursor;
 	}
-
+	// Retrieves a particular contact
+	
 	public Cursor getCurrencyExt(int rowId) throws SQLException {
 
 		Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] {
@@ -211,20 +221,61 @@ public class DBAdapter {
 		args.put(KEY_FLW, follow);
 		return db.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
 	}
-	public boolean updateCurrencyInvest(long rowId,String invest) {
+	public boolean updateCurrencyStart(long rowId, String name, String code,
+			String buy, String sell, String ebuy, String esell, String way,
+			String date) {
+		// This methods returns the number of rows affected by the conducted
+		// operation
+		ContentValues args = new ContentValues();
+		args.put(KEY_NAME, name);
+		args.put(KEY_CODE, code);
+		args.put(KEY_BUY, buy);
+		args.put(KEY_SELL, sell);
+		args.put(KEY_EBUY, ebuy);
+		args.put(KEY_ESELL, esell);
+		args.put(KEY_WAY, way);
+		args.put(KEY_DATE, date);
+		
+		return db.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
+	}
+	public boolean updateCurrencyInvest(String code,String invest) {
 		// This methods returns the number of rows affected by the conducted
 		// operation
 		
 		ContentValues args = new ContentValues();
 		args.put(KEY_INVEST, invest);
-		return db.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
+		return db.update(DATABASE_TABLE, args, KEY_CODE + "='" + code +"'", null) > 0;
 	}
-	public boolean updateCurrencyInterested(long rowId,String follow) {
+	public boolean updateCurrencyInterested(String code,String follow) {
 		// This methods returns the number of rows affected by the conducted
 		// operation
 		
 		ContentValues args = new ContentValues();
 		args.put(KEY_FLW, follow);
-		return db.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
+		return db.update(DATABASE_TABLE, args, KEY_CODE + "='" + code +"'", null) > 0;
 	}
+	public boolean updateCurrencyFirstInvested(String code,String date) {
+		// This methods returns the number of rows affected by the conducted
+		// operation
+		
+		ContentValues args = new ContentValues();
+		args.put(KEY_FRS, date);
+		return db.update(DATABASE_TABLE, args, KEY_CODE + "='" + code +"'", null) > 0;
+	}
+	public boolean updateCurrencyLastInvested(String code,String date) {
+		// This methods returns the number of rows affected by the conducted
+		// operation
+		
+		ContentValues args = new ContentValues();
+		args.put(KEY_LST, date);
+		return db.update(DATABASE_TABLE, args, KEY_CODE + "='" + code +"'", null) > 0;
+	}
+	public boolean updateCurrencyLastValue(String code,String lastValue) {
+        // This methods returns the number of rows affected by the conducted
+        // operation
+        
+        ContentValues args = new ContentValues();
+        args.put(KEY_LVAL, lastValue);
+        return db.update(DATABASE_TABLE, args, KEY_CODE + "='" + code +"'", null) > 0;
+    }
 }

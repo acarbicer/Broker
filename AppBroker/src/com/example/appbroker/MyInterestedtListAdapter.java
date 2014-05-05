@@ -121,7 +121,7 @@ public class MyInterestedtListAdapter extends ArrayAdapter<Currency> {
 						parentActivity);
 
 				// set message, title, and icon
-				myDialogBox.setTitle("Delete Interested");
+				myDialogBox.setTitle("Unfollow Item");
 				myDialogBox.setMessage(msg);
 				myDialogBox.setIcon(R.drawable.remove);
 
@@ -133,12 +133,10 @@ public class MyInterestedtListAdapter extends ArrayAdapter<Currency> {
 								Currency c ;
 								c = DisplayMyInteresteds.currency_list.get(position);
 								calculateRowId(c);
-								DisplayMyInteresteds.updateDB(rowId,"N");
-								String tempCode= DisplayMyInteresteds.currency_list.get(position).getCode();
+								DisplayMyInteresteds.updateDB(c.getCode(),"N");
 								DisplayMyInteresteds.currency_list
-								.remove(position);
-								
-								Toast.makeText(getContext(), tempCode + " is Removed", Toast.LENGTH_SHORT)
+								.remove(c);
+								Toast.makeText(getContext(), c.getCode() + " is Removed", Toast.LENGTH_SHORT)
 										.show();
 								//refresh listview
 								notifyDataSetChanged();
